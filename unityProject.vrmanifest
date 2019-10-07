@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.moonlightflight3d.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\clay\\Documents\\GitHub\\Moonlight-Flight-3D\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "Moonlight Flight 3D [Testing]"
+        }
+      }
+    }
+  ]
+}

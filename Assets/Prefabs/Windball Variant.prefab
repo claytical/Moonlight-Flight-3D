@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 394d54ec99cae8942bc3d4cb65cb2920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 1
+  lifeTime: 5
   force: 57.9
 --- !u!1001 &9054088346344407048
 PrefabInstance:
@@ -84,17 +84,17 @@ PrefabInstance:
     - target: {fileID: 5193063225439357737, guid: 7f4f4154683d50b49b7bfb873a97f8b0,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5193063225439357737, guid: 7f4f4154683d50b49b7bfb873a97f8b0,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5193063225439357737, guid: 7f4f4154683d50b49b7bfb873a97f8b0,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6290665483019922978, guid: 7f4f4154683d50b49b7bfb873a97f8b0,
         type: 3}
@@ -105,6 +105,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6290665483019922978, guid: 7f4f4154683d50b49b7bfb873a97f8b0,
+        type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344133254025343933, guid: 7f4f4154683d50b49b7bfb873a97f8b0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f4f4154683d50b49b7bfb873a97f8b0, type: 3}
