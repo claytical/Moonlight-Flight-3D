@@ -11,6 +11,7 @@ public class Emitter : MonoBehaviour
     public bool emitting;
     private float nextEmitTime;
     public GameObject emitterContainer;
+    public bool debugging = false;
     
     // Start is called before the first frame update
     
@@ -23,7 +24,7 @@ public class Emitter : MonoBehaviour
     void Update()
     {
         emitting = SteamVR_Actions._default.GrabPinch.state;
-        if (emitting)
+        if (emitting || debugging)
         {
             if(nextEmitTime <= Time.time)
             {
@@ -32,11 +33,18 @@ public class Emitter : MonoBehaviour
                 go.transform.position = transform.position;
                 go.transform.rotation = transform.rotation;
                 go.GetComponent<Rigidbody>().velocity = transform.forward * 5f;
-                go.GetComponent<EmittedObject>().force = SteamVR_Actions._default.BlowAir.GetAxis(SteamVR_Input_Sources.RightHand) * 50f;
-                //between 0 and 1, currently .2
+                if (!debugging)
+                {
+                    go.GetComponent<EmittedObject>().force = SteamVR_Actions._default.BlowAir.GetAxis(SteamVR_Input_Sources.RightHand) * 50f;
+                    //between 0 and 1, currently .2
 
-                timeBetweenEmits = 1 - SteamVR_Actions._default.BlowAir.GetAxis(SteamVR_Input_Sources.RightHand);
-                Debug.Log("Time Between Emits: " + timeBetweenEmits);
+                    timeBetweenEmits = 1 - SteamVR_Actions._default.BlowAir.GetAxis(SteamVR_Input_Sources.RightHand);
+                    if(timeBetweenEmits < .02)
+                    {
+                        timeBetweenEmits = .02f;
+                    }
+                }
+                    Debug.Log("Time Between Emits: " + timeBetweenEmits);
 
                 nextEmitTime = Time.time + timeBetweenEmits;
             }
